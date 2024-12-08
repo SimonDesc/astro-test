@@ -19,6 +19,10 @@ try {
 } catch (error) {
     console.error('Error fetching users:', error);
 }
+
+
+const serverTime = new Date().toISOString();
+
 ---
 
 <!doctype html>
@@ -47,6 +51,14 @@ try {
                     <li>No users found</li>
                 )}
             </ul>
+
+			<div>Temps serveur: {serverTime}</div>
+<div id="clientTime"></div>
+
+<script>
+  document.getElementById('clientTime').textContent = 
+    'Temps client: ' + new Date().toISOString();
+</script>
         </main>
         <Footer />
 
